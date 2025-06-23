@@ -1,0 +1,12 @@
+body {
+    background-color: #b2fffc;
+    color: #333333;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+textarea {
+    resize: none;
+}
