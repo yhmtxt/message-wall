@@ -5,8 +5,8 @@ from pydantic import BaseModel
 from fastapi import APIRouter, Query, HTTPException, Depends
 from sqlmodel import select, desc, func
 
-from ..models import Message, MessageWithUserName, MessageCreate, User, UserGroup
-from ..dependencies import SessionDep, CurrentUserDep, deny_access_if_not_init
+from app.models import Message, MessageWithUserName, MessageCreate, User, UserGroup
+from app.dependencies import SessionDep, CurrentUserDep, deny_access_if_not_init
 
 
 class MessagesPage(BaseModel):

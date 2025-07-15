@@ -3,7 +3,7 @@ from datetime import datetime, timezone, timedelta
 import jwt
 from passlib.context import CryptContext
 
-from .config import settings
+from app.config import settings
 
 crypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 

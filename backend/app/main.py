@@ -3,10 +3,10 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from .models import User, UserCreate, UserGroup
-from .dependencies import create_db_and_tables, SessionDep, InitDep
-from .utils import get_password_hash
-from .routers import users, messages
+from app.models import User, UserCreate, UserGroup
+from app.dependencies import create_db_and_tables, SessionDep, InitDep
+from app.utils import get_password_hash
+from app.routers import users, messages
 
 
 @asynccontextmanager

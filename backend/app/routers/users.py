@@ -6,9 +6,9 @@ from fastapi import APIRouter, HTTPException, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlmodel import select
 
-from ..models import User, UserPublic, UserCreate
-from ..dependencies import SessionDep, CurrentUserDep, deny_access_if_not_init
-from ..utils import create_access_token, get_password_hash, verify_password
+from app.models import User, UserPublic, UserCreate
+from app.dependencies import SessionDep, CurrentUserDep, deny_access_if_not_init
+from app.utils import create_access_token, get_password_hash, verify_password
 
 
 class Token(BaseModel):

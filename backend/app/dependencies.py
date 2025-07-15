@@ -6,8 +6,8 @@ from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 from sqlmodel import SQLModel, create_engine, Session, select
 
-from .models import User, UserGroup
-from .config import settings
+from app.models import User, UserGroup
+from app.config import settings
 
 engine = create_engine(settings.DATABASE_URL)
 
