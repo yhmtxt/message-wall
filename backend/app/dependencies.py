@@ -4,16 +4,12 @@ import jwt
 from jwt.exceptions import InvalidTokenError
 from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
-from sqlmodel import SQLModel, create_engine, Session, select
+from sqlmodel import create_engine, Session, select
 
 from app.models import User, UserGroup
 from app.config import settings
 
 engine = create_engine(settings.DATABASE_URL)
-
-
-def create_db_and_tables() -> None:
-    SQLModel.metadata.create_all(engine)
 
 
 def get_session() -> Generator[Session, None, None]:

@@ -1,21 +1,13 @@
-from contextlib import asynccontextmanager
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.models import User, UserCreate, UserGroup
-from app.dependencies import create_db_and_tables, SessionDep, InitDep
+from app.dependencies import SessionDep, InitDep
 from app.utils import get_password_hash
 from app.routers import users, messages
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    create_db_and_tables()
-    yield
-
-
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
